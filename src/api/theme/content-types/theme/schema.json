@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "themes",
+  "info": {
+    "singularName": "theme",
+    "pluralName": "themes",
+    "displayName": "Theme"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uniqueName": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "primaryColorHexCode": {
+      "type": "string"
+    },
+    "secondaryColorHexCode": {
+      "type": "string"
+    },
+    "accentColorHexCode": {
+      "type": "string"
+    },
+    "heroImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
