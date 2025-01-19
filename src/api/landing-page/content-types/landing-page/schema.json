@@ -4,7 +4,8 @@
   "info": {
     "singularName": "landing-page",
     "pluralName": "landing-pages",
-    "displayName": "Landing page"
+    "displayName": "Landing page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,18 +20,6 @@
     },
     "description": {
       "type": "richtext"
-    },
-    "ctaButtonText1": {
-      "type": "string"
-    },
-    "ctaButtonLink1": {
-      "type": "string"
-    },
-    "ctaButtonText2": {
-      "type": "string"
-    },
-    "ctaButtonLink2": {
-      "type": "string"
     }
   }
 }

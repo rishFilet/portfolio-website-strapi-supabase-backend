@@ -339,6 +339,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
   collectionName: 'landing_pages';
   info: {
+    description: '';
     displayName: 'Landing page';
     pluralName: 'landing-pages';
     singularName: 'landing-page';
@@ -349,10 +350,6 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
-    ctaButtonLink1: Schema.Attribute.String;
-    ctaButtonLink2: Schema.Attribute.String;
-    ctaButtonText1: Schema.Attribute.String;
-    ctaButtonText2: Schema.Attribute.String;
     description: Schema.Attribute.RichText;
     header: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -393,6 +390,7 @@ export interface ApiSocialLinkSocialLink extends Struct.CollectionTypeSchema {
 export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
   collectionName: 'themes';
   info: {
+    description: '';
     displayName: 'Theme';
     pluralName: 'themes';
     singularName: 'theme';
@@ -404,6 +402,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     accentColorHexCode: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+    fontColorHexCode: Schema.Attribute.String;
     heroImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'> &
