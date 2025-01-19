@@ -402,6 +402,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     accentColorHexCode: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+    fontAwesomeIcon: Schema.Attribute.String;
     fontColorHexCode: Schema.Attribute.String;
     heroImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

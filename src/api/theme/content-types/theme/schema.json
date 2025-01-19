@@ -39,6 +39,9 @@
     },
     "fontColorHexCode": {
       "type": "string"
+    },
+    "fontAwesomeIcon": {
+      "type": "string"
     }
   }
 }
