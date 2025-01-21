@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "Tag"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "blog_posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog-post.blog-post",
+      "inversedBy": "tags"
+    },
+    "project_posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::project-post.project-post",
+      "inversedBy": "tags"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}
