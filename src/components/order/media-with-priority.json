@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_order_media_with_priorities",
+  "info": {
+    "displayName": "mediaWithPriority",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "priority": {
+      "type": "integer",
+      "unique": true,
+      "min": 1
+    }
+  }
+}

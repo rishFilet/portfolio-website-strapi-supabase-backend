@@ -339,6 +339,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
   collectionName: 'blog_posts';
   info: {
+    description: '';
     displayName: 'Blog Post';
     pluralName: 'blog-posts';
     singularName: 'blog-post';
@@ -354,7 +355,7 @@ export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog-post.blog-post'> &
       Schema.Attribute.Private;
     postContent: Schema.Attribute.RichText;
-    postImages: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    postImages: Schema.Attribute.Component<'order.media-with-priority', false>;
     postSummary: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
@@ -408,7 +409,7 @@ export interface ApiProjectPostProjectPost extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::project-post.project-post'> &
       Schema.Attribute.Private;
-    projectImages: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    projectImages: Schema.Attribute.Component<'order.media-with-priority', true>;
     projectSummary: Schema.Attribute.Text;
     projectUrl: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;

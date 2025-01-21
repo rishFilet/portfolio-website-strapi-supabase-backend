@@ -27,21 +27,16 @@
     "projectUrl": {
       "type": "string"
     },
-    "projectImages": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
-    },
     "technologies": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::technology.technology",
       "mappedBy": "project_posts"
+    },
+    "projectImages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "order.media-with-priority"
     }
   }
 }
