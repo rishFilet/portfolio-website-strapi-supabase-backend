@@ -36,7 +36,7 @@
     },
     "postImages": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "order.media-with-priority"
     }
   }

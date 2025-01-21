@@ -355,7 +355,7 @@ export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog-post.blog-post'> &
       Schema.Attribute.Private;
     postContent: Schema.Attribute.RichText;
-    postImages: Schema.Attribute.Component<'order.media-with-priority', false>;
+    postImages: Schema.Attribute.Component<'order.media-with-priority', true>;
     postSummary: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
