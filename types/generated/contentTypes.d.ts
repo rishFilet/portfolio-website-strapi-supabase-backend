@@ -413,6 +413,7 @@ export interface ApiProjectPostProjectPost extends Struct.CollectionTypeSchema {
     projectUrl: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
+    technologies: Schema.Attribute.Relation<'manyToMany', 'api::technology.technology'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
@@ -460,6 +461,31 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    project_posts: Schema.Attribute.Relation<'manyToMany', 'api::project-post.project-post'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTechnologyTechnology extends Struct.CollectionTypeSchema {
+  collectionName: 'technologies';
+  info: {
+    displayName: 'Technology';
+    pluralName: 'technologies';
+    singularName: 'technology';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::technology.technology'> &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     project_posts: Schema.Attribute.Relation<'manyToMany', 'api::project-post.project-post'>;
@@ -931,6 +957,7 @@ declare module '@strapi/strapi' {
       'api::project-post.project-post': ApiProjectPostProjectPost;
       'api::social-link.social-link': ApiSocialLinkSocialLink;
       'api::tag.tag': ApiTagTag;
+      'api::technology.technology': ApiTechnologyTechnology;
       'api::theme.theme': ApiThemeTheme;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
