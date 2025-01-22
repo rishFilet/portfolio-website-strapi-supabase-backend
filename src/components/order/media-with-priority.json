@@ -2,11 +2,17 @@
   "collectionName": "components_order_media_with_priorities",
   "info": {
     "displayName": "mediaWithPriority",
-    "icon": "picture"
+    "icon": "picture",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "media": {
+    "priority": {
+      "type": "integer",
+      "unique": true,
+      "min": 1
+    },
+    "mediaFiles": {
       "allowedTypes": [
         "images",
         "files",
@@ -15,11 +21,6 @@
       ],
       "type": "media",
       "multiple": true
-    },
-    "priority": {
-      "type": "integer",
-      "unique": true,
-      "min": 1
     }
   }
 }
