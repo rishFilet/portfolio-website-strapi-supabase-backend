@@ -540,6 +540,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'> &
       Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     primaryColorHexCode: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     secondaryColorHexCode: Schema.Attribute.String;
