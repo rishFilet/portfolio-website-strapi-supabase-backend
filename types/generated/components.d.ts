@@ -8,9 +8,9 @@ export interface OrderMediaWithPriority extends Struct.ComponentSchema {
     icon: 'picture';
   };
   attributes: {
+    isMain: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     mediaFiles: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    priority: Schema.Attribute.Integer &
-      Schema.Attribute.Unique &
+    order: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
         {
           min: 1;

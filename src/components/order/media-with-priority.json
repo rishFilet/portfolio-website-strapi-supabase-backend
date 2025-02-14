@@ -7,20 +7,25 @@
   },
   "options": {},
   "attributes": {
-    "priority": {
+    "order": {
       "type": "integer",
-      "unique": true,
+      "unique": false,
       "min": 1
     },
     "mediaFiles": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "isMain": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
