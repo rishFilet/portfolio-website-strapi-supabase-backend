@@ -18,7 +18,7 @@
     "description": {
       "type": "richtext"
     },
-    "commaSeparatedSubHeadersList": {
+    "commaSeparatedSubHeadersString": {
       "type": "text"
     }
   }

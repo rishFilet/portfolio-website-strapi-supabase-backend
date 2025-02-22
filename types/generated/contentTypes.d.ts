@@ -378,7 +378,7 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    commaSeparatedSubHeadersList: Schema.Attribute.Text;
+    commaSeparatedSubHeadersString: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
     description: Schema.Attribute.RichText;
