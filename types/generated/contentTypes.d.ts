@@ -378,6 +378,7 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    commaSeparatedSubHeadersList: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
     description: Schema.Attribute.RichText;
@@ -386,7 +387,6 @@ export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::landing-page.landing-page'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    subHeader: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
   };
