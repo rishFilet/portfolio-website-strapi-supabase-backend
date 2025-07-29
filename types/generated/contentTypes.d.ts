@@ -418,7 +418,7 @@ export interface ApiLogoLogo extends Struct.SingleTypeSchema {
 export interface ApiProjectPostProjectPost extends Struct.CollectionTypeSchema {
   collectionName: 'project_posts';
   info: {
-    description: '';
+    description: 'Project posts with card display and detailed content sections';
     displayName: 'Project Post';
     pluralName: 'project-posts';
     singularName: 'project-post';
@@ -427,18 +427,25 @@ export interface ApiProjectPostProjectPost extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    cardSummary: Schema.Attribute.Text;
+    cardTitle: Schema.Attribute.String;
+    contentSections: Schema.Attribute.Component<'project.project-content-section', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+    featuredImage: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::project-post.project-post'> &
       Schema.Attribute.Private;
+    projectDetails: Schema.Attribute.RichText;
     projectImages: Schema.Attribute.Component<'order.media-with-priority', true>;
+    projectLinks: Schema.Attribute.Component<'project.project-links', false>;
+    projectMetadata: Schema.Attribute.Component<'project.project-metadata', false>;
     projectSummary: Schema.Attribute.Text;
-    projectUrl: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     technologies: Schema.Attribute.Relation<'manyToMany', 'api::technology.technology'>;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
   };
@@ -531,6 +538,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    accentColorAltHexCode: Schema.Attribute.String;
     accentColorHexCode: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
@@ -541,8 +549,10 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::theme.theme'> &
       Schema.Attribute.Private;
     logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    primaryColorAltHexCode: Schema.Attribute.String;
     primaryColorHexCode: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    secondaryColorAltHexCode: Schema.Attribute.String;
     secondaryColorHexCode: Schema.Attribute.String;
     uniqueName: Schema.Attribute.String & Schema.Attribute.Required & Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;

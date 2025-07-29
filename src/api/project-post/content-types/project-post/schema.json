@@ -5,7 +5,7 @@
     "singularName": "project-post",
     "pluralName": "project-posts",
     "displayName": "Project Post",
-    "description": ""
+    "description": "Project posts with card display and detailed content sections"
   },
   "options": {
     "draftAndPublish": true
@@ -13,10 +13,38 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "cardTitle": {
+      "type": "string",
+      "description": "Title displayed on the project card (can be different from main title)"
+    },
+    "cardSummary": {
+      "type": "text",
+      "description": "Brief summary displayed on the project card"
     },
     "projectSummary": {
-      "type": "text"
+      "type": "text",
+      "description": "Detailed project summary for the project page"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "description": "Main image displayed on the project card"
+    },
+    "projectImages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "order.media-with-priority",
+      "description": "Additional project images for the project page"
     },
     "tags": {
       "type": "relation",
@@ -24,19 +52,31 @@
       "target": "api::tag.tag",
       "mappedBy": "project_posts"
     },
-    "projectUrl": {
-      "type": "string"
-    },
     "technologies": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::technology.technology",
       "mappedBy": "project_posts"
     },
-    "projectImages": {
+    "projectLinks": {
+      "type": "component",
+      "component": "project.project-links",
+      "description": "Project links and button configurations"
+    },
+    "projectMetadata": {
+      "type": "component",
+      "component": "project.project-metadata",
+      "description": "Project metadata and display options"
+    },
+    "projectDetails": {
+      "type": "richtext",
+      "description": "Detailed project content with markdown support"
+    },
+    "contentSections": {
       "type": "component",
       "repeatable": true,
-      "component": "order.media-with-priority"
+      "component": "project.project-content-section",
+      "description": "Additional content sections for the project page"
     }
   }
 }

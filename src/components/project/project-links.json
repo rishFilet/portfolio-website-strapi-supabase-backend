@@ -1,0 +1,53 @@
+{
+  "collectionName": "components_project_project_links",
+  "info": {
+    "displayName": "Project Links",
+    "icon": "link",
+    "description": "Links and buttons for project actions"
+  },
+  "options": {},
+  "attributes": {
+    "liveDemoUrl": {
+      "type": "string",
+      "description": "Live demo URL"
+    },
+    "sourceCodeUrl": {
+      "type": "string",
+      "description": "Source code repository URL"
+    },
+    "documentationUrl": {
+      "type": "string",
+      "description": "Documentation or case study URL"
+    },
+    "videoDemoUrl": {
+      "type": "string",
+      "description": "Video demo URL"
+    },
+    "showLiveDemo": {
+      "type": "boolean",
+      "default": true,
+      "description": "Show live demo button"
+    },
+    "showSourceCode": {
+      "type": "boolean",
+      "default": true,
+      "description": "Show source code button"
+    },
+    "showDocumentation": {
+      "type": "boolean",
+      "default": false,
+      "description": "Show documentation button"
+    },
+    "showVideoDemo": {
+      "type": "boolean",
+      "default": false,
+      "description": "Show video demo button"
+    },
+    "buttonOrder": {
+      "type": "enumeration",
+      "enum": ["live-demo-first", "source-code-first", "documentation-first"],
+      "default": "live-demo-first",
+      "description": "Order of buttons on the project card"
+    }
+  }
+}

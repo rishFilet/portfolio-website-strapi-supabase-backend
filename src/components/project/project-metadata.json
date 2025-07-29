@@ -1,0 +1,55 @@
+{
+  "collectionName": "components_project_project_metadata",
+  "info": {
+    "displayName": "Project Metadata",
+    "icon": "information",
+    "description": "Project metadata including status, dates, and display options"
+  },
+  "options": {},
+  "attributes": {
+    "projectStatus": {
+      "type": "enumeration",
+      "enum": ["completed", "in-progress", "planned", "archived"],
+      "default": "completed",
+      "description": "Current status of the project"
+    },
+    "startDate": {
+      "type": "date",
+      "description": "Project start date"
+    },
+    "completionDate": {
+      "type": "date",
+      "description": "Project completion date"
+    },
+    "isFeatured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Mark project as featured for special display"
+    },
+    "isPublic": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether the project should be publicly visible"
+    },
+    "sortOrder": {
+      "type": "integer",
+      "default": 0,
+      "description": "Custom sort order for projects (lower numbers appear first)"
+    },
+    "difficulty": {
+      "type": "enumeration",
+      "enum": ["beginner", "intermediate", "advanced", "expert"],
+      "description": "Project difficulty level"
+    },
+    "estimatedDuration": {
+      "type": "string",
+      "description": "Estimated time to complete the project (e.g., '2-3 months')"
+    },
+    "teamSize": {
+      "type": "enumeration",
+      "enum": ["solo", "small-team", "large-team"],
+      "default": "solo",
+      "description": "Team size for the project"
+    }
+  }
+}

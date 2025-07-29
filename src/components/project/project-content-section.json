@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_project_project_content_sections",
+  "info": {
+    "displayName": "Project Content Section",
+    "icon": "file",
+    "description": "A section of project content with title and rich text"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string",
+      "required": true,
+      "description": "Title of the content section"
+    },
+    "sectionContent": {
+      "type": "richtext",
+      "required": true,
+      "description": "Content of the section with markdown support"
+    },
+    "sectionOrder": {
+      "type": "integer",
+      "default": 0,
+      "description": "Order of the section on the page"
+    },
+    "isCollapsible": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this section can be collapsed/expanded"
+    },
+    "isExpandedByDefault": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether this section is expanded by default"
+    }
+  }
+}

@@ -20,10 +20,19 @@
     "primaryColorHexCode": {
       "type": "string"
     },
+    "primaryColorAltHexCode": {
+      "type": "string"
+    },
     "secondaryColorHexCode": {
       "type": "string"
     },
+    "secondaryColorAltHexCode": {
+      "type": "string"
+    },
     "accentColorHexCode": {
+      "type": "string"
+    },
+    "accentColorAltHexCode": {
       "type": "string"
     },
     "heroImage": {
